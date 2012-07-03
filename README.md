@@ -1,4 +1,4 @@
-# Setting up a Drupal host #
+# Setting up a Wordpress host #
 
 ## Requirements ##
     Virtualbox => https://www.virtualbox.org/wiki/Downloads
@@ -8,5 +8,5 @@
     vagrant up
     vagrant provision
 
-## Install Drupal ##
+## Using Wordpress ##
 	your drupal site will be available via http://localhost:8080.
