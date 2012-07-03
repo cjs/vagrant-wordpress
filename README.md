@@ -9,4 +9,4 @@
     vagrant provision
 
 ## Using Wordpress ##
-	your drupal site will be available via http://localhost:8080.
+	your wordpress site will be available via http://localhost:8080.
