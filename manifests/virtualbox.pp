@@ -60,12 +60,11 @@ exec { 'download-wordpress':
 }
 
 exec { 'unzip-wordpress-zip':
-  command => "unzip /home/vagrant/wordpress-$wordpress_version.zip  -d /home/vagrant",
-  creates => "/home/vagrant/wordpress",
+  command => "unzip /home/vagrant/wordpress-$wordpress_version.zip  -d /home/vagrant/wordpress-$wordpress_version",
+  creates => "/home/vagrant/wordpress-$wordpress_version/wordpress",
   require => Exec['download-wordpress'],
 }
-
-file { "/home/vagrant/wordpress":
+file { "/home/vagrant/wordpress-$wordpress_version":
   ensure  => directory,
   owner   => 'www-data',
   group   => 'www-data',
@@ -76,8 +75,8 @@ file { "/home/vagrant/wordpress":
 
 file { '/home/vagrant/wordpress-www':
   ensure  => link,
-  target  => "/home/vagrant/wordpress",
-  require => File["/home/vagrant/wordpress"],
+  target  => "/home/vagrant/wordpress-$wordpress_version/wordpress",
+  require => Exec['unzip-wordpress-zip'],
 }
 
 apache::vhost { 'wordpress.test':
