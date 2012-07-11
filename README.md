@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/attachmentgenie/vagrant-wordpress.png)](http://travis-ci.org/attachmentgenie/vagrant-wordpress)
+
 # Setting up a Wordpress host #
 
 ## Requirements ##
@@ -9,4 +11,4 @@
     vagrant provision
 
 ## Using Wordpress ##
-	your wordpress site will be available via http://localhost:8080.
+    your wordpress site will be available via http://localhost:8080.
