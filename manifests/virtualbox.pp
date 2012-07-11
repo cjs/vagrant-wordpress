@@ -50,7 +50,7 @@ file { '/home/vagrant/wordpress-data':
   ensure => directory,
   owner  => 'www-data',
   group  => 'www-data',
-  mode   => '777',
+  mode   => '0777',
 }
 
 exec { 'download-wordpress':
@@ -69,7 +69,7 @@ file { "/home/vagrant/wordpress-$wordpress_version":
   owner   => 'www-data',
   group   => 'www-data',
   recurse => true,
-  mode    => '777',
+  mode    => '0777',
   require => Exec['unzip-wordpress-zip'],
 }
 
